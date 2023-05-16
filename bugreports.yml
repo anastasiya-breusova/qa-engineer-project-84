@@ -1,0 +1,187 @@
+---
+- summary: |
+    При обновлении страницы сайта происходит изменение языка на английский
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на выпадающий список "Language"
+    3. Выбрать "Russian"
+    4. Обновить страницу магазина
+  expected-result: |
+    Станица магазина должна быть в русской версии
+  actual-result: |
+    Страница магазина изменена на ангийскую версию
+    
+---
+- summary: |
+    Корзина не сохраняется в сессии браузера
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Выбрать товар
+    3. Нажать на кнопку "Add to cart"
+    4. Нажать на "Cart"
+    5. Закрыть вкладку браузера с сайтом
+    6. Повторно закйти на https://hexlet-products-store.vercel.app/
+    7. Нажать на "Cart"
+  expected-result: |
+    В корзине отображается добавленный товар
+  actual-result: |
+    Корзина пуста
+     
+---
+- summary: |
+      Активная кнопка "Previous" на первой странице сайта
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на кнопку "Previous"
+  expected-result: |
+    Кнопка "Previous" неактивна
+  actual-result: |
+    Кнопка "Previous" активна
+    
+---
+- summary: |
+      Активная кнопка "Next" на последней странице сайта
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на кнопку "Next"
+  expected-result: |
+    Кнопка "Next" неактивна
+  actual-result: |
+    Кнопка "Next" активна
+    
+---
+- summary: |
+    Активные кнопки "Previous" и "Next" при неотмеченном чекбоксе "In Stock" и отсутствии товаров
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на чекбокс "In Stock"
+    3. Получить сообщение "Nothing found!"
+    4. 
+  expected-result: |
+    Кнопки "Previous" и "Next" неактивны
+  actual-result: |
+    Кнопки "Previous" и "Next" активны
+    
+---
+- summary: |
+    При переходе по страницам магазина меняется выпадающий список "Category"
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Нажать на "Category"
+    3. Зафиксировать список категорий
+    4. Нажать на "Next"
+    5. Зафиксировать новый список категорий
+    6. Сравнить п.3 и п.5
+  expected-result: |
+    Список "Category" оставется полным и неизменным при переходе по страницам с товарами
+  actual-result: |
+    Список "Category" меняется в соответствии с переходом по страницам товаров
+    
+---
+- summary: |
+    При переходе по страницам магазина меняется список чекбоксов "Brand"
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Зафиксировать список брендов
+    3. Нажать на "Next"
+    4. Зафиксировать новый список брендов
+    5. Сравнить п.2 и п.4
+  expected-result: |
+    Список "Brand" оставется полным и неизменным при переходе по страницам с товарами
+  actual-result: |
+    Список "Brand" меняется в соответствии с переходом по страницам товаров
+
+---
+- summary: |
+    Не включены максимальные значения стоимости товаров в фильтрации по цене
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Ввести максимальное значение стоимости товара из БД в поле цены "From"  # в данном случае максимальное значение 1749
+  expected-result: |
+    Отображается товар с максимальной стоимостью товара
+  actual-result: |
+    Получено сообщение "Nothing found!"
+    
+---
+- summary: |
+    Не включены минимальные значения стоимости товаров в фильтрации по цене
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Ввести минимальное значение стоимости товара из БД в поле цены "To"  # в данном случае минимальное значение 12
+  expected-result: |
+     Отображается товар с минимальной стоимостью товара
+  actual-result: |
+    Получено сообщение "Nothing found!"
+    
+---
+- summary: |
+    Фильтрация по цене осуществляется только по стоимости товара без учета стоимости со скидкой
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. Ввести минимальное значение стоимости товара со скидкой из БД в поле цены "To"  # в данном случае минимальное значение 11.51
+  expected-result: |
+    Отображается товар с минимальной стоимостью товара со скидкой
+  actual-result: |
+    Получено сообщение "Nothing found!"
+    
+---
+- summary: |
+    Едет верстка на экранах с разраешеним ниже 1400x900
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. 
+    3. 
+    4.
+  expected-result: |
+    
+  actual-result: |
+    
+---
+- summary: |
+    
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://hexlet-products-store.vercel.app/
+    2. 
+    3. 
+    4.
+  expected-result: |
+    
+  actual-result: |
+    
+---
