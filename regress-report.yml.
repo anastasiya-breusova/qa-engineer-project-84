@@ -43,12 +43,47 @@ test-cases:
 ---
 bugreports:
   - summary: |
-      Короткое описание ошибки
-    environment: |
-      Ссылка на билд/коммит/версия ПО и всего окружения
-    steps-to-reproduce: |
-      Полный перечень шагов для воспроизведения, на каком шаге произошла ошибка
-    expected-result: |
-      Какой результат должен был быть без ошибки
-    actual-result: |
-      Какой результат получился на самом деле
+    При нажати на "Store" происходит изменение языка на английский
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Нажать на выпадающий список "Language"
+    3. Выбрать "Russian"
+    4. Нажать на "Store"
+  expected-result: |
+    Станица магазина должна быть в русской версии
+  actual-result: |
+    Страница магазина изменена на английскую версию
+
+---
+  - summary: |
+    Отсутствуют изменения в отображении товаров при не отмеченном чекбоксе "In Stock"
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Нажать на чекбокс "In Stock"
+  expected-result: |
+    На странице остаются товары, которые не в наличии
+  actual-result: |
+    На странице не происходит изменений в отображаемых товарах
+
+---
+  - summary: |
+    
+  environment: |
+    Версия 109.0.5414.87 (Официальная сборка), (x86_64)
+    ОС macOS Monterey 12.6
+  steps-to-reproduce: |
+    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. 
+    3.
+    4.
+  expected-result: |
+    
+  actual-result: |
+    
+---
