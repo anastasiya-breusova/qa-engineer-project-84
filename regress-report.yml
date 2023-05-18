@@ -1,11 +1,11 @@
 ---
 test-cases:
 - summary: |
-    Проверка поиска товаров, находящихся в БД магазина, по ключевому слову.
+    Проверка фильтра по ключевому слову.
   status: pass
 
 - summary: |
-    Проверка поиска товаров, отсутствующих в БД магазина, по ключевому слову.
+    Проверка нулевой выдачи по ключевому слову.
   status: fail
   
 - summary: |
@@ -47,10 +47,9 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Нажать на выпадающий список "Language"
-    3. Выбрать "Russian"
-    4. Нажать на "Store"
+    1. Нажать на выпадающий список "Language"
+    2. Выбрать "Russian"
+    3. Нажать на "Store"
   expected-result: |
     Станица магазина должна быть в русской версии
   actual-result: |
@@ -62,8 +61,7 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Нажать на чекбокс "In Stock"
+    1. Нажать на чекбокс "In Stock"
   expected-result: |
     На странице остаются товары, которые не в наличии
   actual-result: |
@@ -75,10 +73,9 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Выбрать несколько товаров
-    3. Добавить товары в корзину
-    4. Нажать на "Cart"
+    1. Выбрать несколько товаров
+    2. Добавить товары в корзину
+    3. Нажать на "Cart"
   expected-result: |
     Адаптивный сайт
   actual-result: |
@@ -90,13 +87,12 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Выбрать товары
-    3. Добавить товары
-    4. Перейти в корзину
-    5. Нажать на кнопку "Clear cart"
-    6. Нажать на "Store"
-    7. Перейти в корзину
+    1. Выбрать товары
+    2. Добавить товары
+    3. Перейти в корзину
+    4. Нажать на кнопку "Clear cart"
+    5. Нажать на "Store"
+    6. Перейти в корзину
   expected-result: |
     Корзина пуста
   actual-result: |
@@ -108,10 +104,9 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Скроллить вниз
-    3. Применять фильтр Brang = apple
-    4. Скроллить вверх для просмотра всего контента
+    1. Скроллить вниз
+    2. Применять фильтр Brang = apple
+    3. Скроллить вверх для просмотра всего контента
   expected-result: |
     Выбор фильтра в верхней области сайта
   actual-result: |
@@ -123,9 +118,8 @@ bugreports:
     Версия 109.0.5414.87 (Официальная сборка), (x86_64)
     ОС macOS Monterey 12.6
   steps-to-reproduce: |
-    1. Зайти на страницу интернет-магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    2. Выбрать товар
-    3. Нажать на блок с текстовым описанием
+    1. Выбрать товар
+    2. Нажать на блок с текстовым описанием
   expected-result: |
     Происходит переход на карточку товара
   actual-result: |
